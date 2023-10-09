@@ -18,18 +18,8 @@ import com.empservice.empapplication.service.EmployeeService;
 
 @RestController
 public class EmployeeController {
-
-
 	@Autowired
 	EmployeeService employeeService;
-
-	/*@GetMapping("/employee/{id}")
-	public Employee getEmployee(@PathVariable("id") int id) {
-
-		Employee employee =employeeService.getEmployeeById(id);
-		
-		return employee;
-	}*/
 	
 	@GetMapping("/employee/{id}")
 	ResponseEntity<EmployeeResponse>  getEmployee(@PathVariable("id") int id) {
@@ -45,9 +35,6 @@ public class EmployeeController {
 		// return new ResponseEntity<List<EmployeeResponse>>(entities, HttpStatus.OK);
 	
 }
-	
-	//
-	
 	
 	@PostMapping("/employeeDetails")
 	ResponseEntity<Employee> saveEmployeeDetails(@RequestBody Employee employee,@RequestBody Address address){
